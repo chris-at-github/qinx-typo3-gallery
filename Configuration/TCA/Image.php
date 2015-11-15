@@ -6,10 +6,10 @@ if (!defined ('TYPO3_MODE')) {
 $GLOBALS['TCA']['tx_qxgallery_domain_model_image'] = array(
 	'ctrl' => $GLOBALS['TCA']['tx_qxgallery_domain_model_image']['ctrl'],
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, image, category',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, image, thumbnail, dimension, price, category',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, name, image, category, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, name, image, thumbnail, dimension, price, category, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -114,6 +114,33 @@ $GLOBALS['TCA']['tx_qxgallery_domain_model_image'] = array(
 				array('maxitems' => 1),
 				$GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
 			),
+		),
+		'thumbnail' => array(
+			'exclude' => 0,
+			'label' => 'LLL:EXT:qxgallery/Resources/Private/Language/locallang_db.xlf:tx_qxgallery_domain_model_image.thumbnail',
+			'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+				'thumbnail',
+				array('maxitems' => 1),
+				$GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
+			),
+		),
+		'dimension' => array(
+			'exclude' => 0,
+			'label' => 'LLL:EXT:qxgallery/Resources/Private/Language/locallang_db.xlf:tx_qxgallery_domain_model_image.dimension',
+			'config' => array(
+				'type' => 'input',
+				'size' => 30,
+				'eval' => 'trim'
+			),
+		),
+		'price' => array(
+			'exclude' => 0,
+			'label' => 'LLL:EXT:qxgallery/Resources/Private/Language/locallang_db.xlf:tx_qxgallery_domain_model_image.price',
+			'config' => array(
+				'type' => 'input',
+				'size' => 30,
+				'eval' => 'double2'
+			)
 		),
 		'category' => array(
 			'exclude' => 0,

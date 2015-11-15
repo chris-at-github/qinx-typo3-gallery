@@ -33,49 +33,13 @@ namespace Qinx\Qxgallery\Controller;
 class CategoryController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 
 	/**
-	 * categoryRepository
-	 * 
-	 * @var \Qinx\Qxgallery\Domain\Repository\CategoryRepository
-	 * @inject
-	 */
-	protected $categoryRepository = NULL;
-
-	/**
-	 * action list
-	 * 
-	 * @return void
-	 */
-	public function listAction() {
-		$categories = $this->categoryRepository->findAll();
-		$this->view->assign('categories', $categories);
-	}
-
-	/**
-	 * action show
-	 * 
-	 * @param \Qinx\Qxgallery\Domain\Model\Category $category
-	 * @return void
-	 */
-	public function showAction(\Qinx\Qxgallery\Domain\Model\Category $category) {
-		$this->view->assign('category', $category);
-	}
-
-	/**
-	 * action index
-	 * 
+	 * Action Index
+	 *
 	 * @return void
 	 */
 	public function indexAction() {
-		
+		if(isset($this->settings['category']) === true) {
+			$this->view->assign('category', $this->objectManager->get('\Qinx\Qxgallery\Domain\Repository\CategoryRepository')->findByUid((int) $this->settings['category']));
+		}
 	}
-
-	/**
-	 * action properties
-	 * 
-	 * @return void
-	 */
-	public function propertiesAction() {
-		
-	}
-
 }

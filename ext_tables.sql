@@ -48,6 +48,9 @@ CREATE TABLE tx_qxgallery_domain_model_image (
 
 	name varchar(255) DEFAULT '' NOT NULL,
 	image int(11) unsigned NOT NULL default '0',
+	thumbnail int(11) unsigned NOT NULL default '0',
+	dimension varchar(255) DEFAULT '' NOT NULL,
+	price double(11,2) DEFAULT '0.00' NOT NULL,
 	category int(11) unsigned DEFAULT '0',
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,

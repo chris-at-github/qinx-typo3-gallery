@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2015-11-09T12:13:07Z" product-name="qxgallery">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-11-15T20:37:46Z" product-name="qxgallery">
 		<header/>
 		<body>
 			<trans-unit id="tx_qxgallery_domain_model_category">
@@ -17,6 +17,15 @@
 			</trans-unit>
 			<trans-unit id="tx_qxgallery_domain_model_image.image">
 				<source>Image</source>
+			</trans-unit>
+			<trans-unit id="tx_qxgallery_domain_model_image.thumbnail">
+				<source>Thumbnail</source>
+			</trans-unit>
+			<trans-unit id="tx_qxgallery_domain_model_image.dimension">
+				<source>Dimension</source>
+			</trans-unit>
+			<trans-unit id="tx_qxgallery_domain_model_image.price">
+				<source>Price</source>
 			</trans-unit>
 			<trans-unit id="tx_qxgallery_domain_model_image.category">
 				<source>Category</source>

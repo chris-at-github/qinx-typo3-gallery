@@ -1,0 +1,26 @@
+<T3DataStructure>
+	<meta>
+		<langDisable>1</langDisable>
+	</meta>
+	<sheets>
+		<sDEF>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>LLL:EXT:qxgallery/Resources/Private/Language/locallang_db.xlf:flexform.pi1.category</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<settings.category>
+						<TCEforms>
+							<label>LLL:EXT:qxgallery/Resources/Private/Language/locallang_db.xlf:flexform.pi1.category</label>
+							<config>
+								<type>select</type>
+								<itemsProcFunc>Qinx\Qxgallery\Utilities\FlexformUtility->getCategories</itemsProcFunc>
+							</config>
+						</TCEforms>
+					</settings.category>
+				</el>
+			</ROOT>
+		</sDEF>
+	</sheets>
+</T3DataStructure>

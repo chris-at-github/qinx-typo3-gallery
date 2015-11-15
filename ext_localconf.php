@@ -7,7 +7,7 @@ if (!defined('TYPO3_MODE')) {
 	'Qinx.' . $_EXTKEY,
 	'Pi1',
 	array(
-		'Category' => 'list, show, index, properties',
+		'Category' => 'index, properties',
 		'Image' => 'list, show',
 		
 	),

@@ -105,6 +105,36 @@
                             "propertyName": "image",
                             "propertyType": "Image",
                             "uid": "616845558098"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "thumbnail",
+                            "propertyType": "Image",
+                            "uid": "301780568579"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "dimension",
+                            "propertyType": "String",
+                            "uid": "1278381957606"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "price",
+                            "propertyType": "Float",
+                            "uid": "171995804812"
                         }
                     ]
                 },
@@ -141,7 +171,7 @@
         },
         "extensionKey": "qxgallery",
         "name": "Qinx Gallery",
-        "originalExtensionKey": "",
+        "originalExtensionKey": "qxgallery",
         "persons": [
             {
                 "company": "",
@@ -178,7 +208,7 @@
         }
     ],
     "log": {
-        "last_modified": "2015-11-09 12:13",
+        "last_modified": "2015-11-15 08:37",
         "extension_builder_version": "6.2.0",
         "be_user": "Christian Pschorr (1)"
     }

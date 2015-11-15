@@ -21,6 +21,9 @@ Otherwise your changes will be overwritten the next time you save the extension 
 	<tr>
 		<th><f:translate key="tx_qxgallery_domain_model_image.name" /></th>
 		<th><f:translate key="tx_qxgallery_domain_model_image.image" /></th>
+		<th><f:translate key="tx_qxgallery_domain_model_image.thumbnail" /></th>
+		<th><f:translate key="tx_qxgallery_domain_model_image.dimension" /></th>
+		<th><f:translate key="tx_qxgallery_domain_model_image.price" /></th>
 		<th> </th>
 		<th> </th>
 	</tr>
@@ -29,6 +32,9 @@ Otherwise your changes will be overwritten the next time you save the extension 
 		<tr>
 			<td><f:link.action action="show" arguments="{image : image}"> {image.name}</f:link.action></td>
 			<td><f:link.action action="show" arguments="{image : image}"> {image.image.originalResource.name}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{image : image}"> {image.thumbnail.originalResource.name}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{image : image}"> {image.dimension}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{image : image}"> {image.price}</f:link.action></td>
 			<td><f:link.action action="edit" arguments="{image : image}">Edit</f:link.action></td>
 			<td><f:link.action action="delete" arguments="{image : image}">Delete</f:link.action></td>
 		</tr>

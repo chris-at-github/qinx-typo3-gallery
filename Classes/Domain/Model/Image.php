@@ -49,6 +49,27 @@ class Image extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $image = NULL;
 
 	/**
+	 * thumbnail
+	 * 
+	 * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
+	 */
+	protected $thumbnail = NULL;
+
+	/**
+	 * dimension
+	 * 
+	 * @var string
+	 */
+	protected $dimension = '';
+
+	/**
+	 * price
+	 * 
+	 * @var float
+	 */
+	protected $price = 0.0;
+
+	/**
 	 * category
 	 * 
 	 * @var \Qinx\Qxgallery\Domain\Model\Category
@@ -94,6 +115,63 @@ class Image extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
+	 * Returns the thumbnail
+	 * 
+	 * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $thumbnail
+	 */
+	public function getThumbnail() {
+		return $this->thumbnail;
+	}
+
+	/**
+	 * Sets the thumbnail
+	 * 
+	 * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $thumbnail
+	 * @return void
+	 */
+	public function setThumbnail(\TYPO3\CMS\Extbase\Domain\Model\FileReference $thumbnail) {
+		$this->thumbnail = $thumbnail;
+	}
+
+	/**
+	 * Returns the dimension
+	 * 
+	 * @return string $dimension
+	 */
+	public function getDimension() {
+		return $this->dimension;
+	}
+
+	/**
+	 * Sets the dimension
+	 * 
+	 * @param string $dimension
+	 * @return void
+	 */
+	public function setDimension($dimension) {
+		$this->dimension = $dimension;
+	}
+
+	/**
+	 * Returns the price
+	 * 
+	 * @return float $price
+	 */
+	public function getPrice() {
+		return $this->price;
+	}
+
+	/**
+	 * Sets the price
+	 * 
+	 * @param float $price
+	 * @return void
+	 */
+	public function setPrice($price) {
+		$this->price = $price;
+	}
+
+	/**
 	 * Returns the category
 	 * 
 	 * @return \Qinx\Qxgallery\Domain\Model\Category $category
@@ -111,5 +189,4 @@ class Image extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	public function setCategory(\Qinx\Qxgallery\Domain\Model\Category $category) {
 		$this->category = $category;
 	}
-
 }

@@ -1,7 +1,6 @@
 <?php
 namespace Qinx\Qxgallery\Domain\Repository;
 
-
 /***************************************************************
  *
  *  Copyright notice
@@ -31,6 +30,4 @@ namespace Qinx\Qxgallery\Domain\Repository;
  * The repository for Categories
  */
 class CategoryRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
-
-	
 }

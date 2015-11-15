@@ -98,6 +98,78 @@ class ImageTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
+	public function getThumbnailReturnsInitialValueForFileReference() {
+		$this->assertEquals(
+			NULL,
+			$this->subject->getThumbnail()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setThumbnailForFileReferenceSetsThumbnail() {
+		$fileReferenceFixture = new \TYPO3\CMS\Extbase\Domain\Model\FileReference();
+		$this->subject->setThumbnail($fileReferenceFixture);
+
+		$this->assertAttributeEquals(
+			$fileReferenceFixture,
+			'thumbnail',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getDimensionReturnsInitialValueForString() {
+		$this->assertSame(
+			'',
+			$this->subject->getDimension()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setDimensionForStringSetsDimension() {
+		$this->subject->setDimension('Conceived at T3CON10');
+
+		$this->assertAttributeEquals(
+			'Conceived at T3CON10',
+			'dimension',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getPriceReturnsInitialValueForFloat() {
+		$this->assertSame(
+			0.0,
+			$this->subject->getPrice()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setPriceForFloatSetsPrice() {
+		$this->subject->setPrice(3.14159265);
+
+		$this->assertAttributeEquals(
+			3.14159265,
+			'price',
+			$this->subject,
+			'',
+			0.000000001
+		);
+	}
+
+	/**
+	 * @test
+	 */
 	public function getCategoryReturnsInitialValueForCategory() {
 		$this->assertEquals(
 			NULL,

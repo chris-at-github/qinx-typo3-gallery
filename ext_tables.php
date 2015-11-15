@@ -11,6 +11,9 @@ if (!defined('TYPO3_MODE')) {
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'Qinx Gallery');
 
+$TCA['tt_content']['types']['list']['subtypes_addlist']['qxgallery_pi1'] = 'pi_flexform';
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue('qxgallery_pi1', 'FILE:EXT:' . $_EXTKEY . '/Configuration/FlexForms/QinxGalleryPi1.xml');
+
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_qxgallery_domain_model_category', 'EXT:qxgallery/Resources/Private/Language/locallang_csh_tx_qxgallery_domain_model_category.xlf');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_qxgallery_domain_model_category');
 $GLOBALS['TCA']['tx_qxgallery_domain_model_category'] = array(
@@ -63,7 +66,7 @@ $GLOBALS['TCA']['tx_qxgallery_domain_model_image'] = array(
 			'starttime' => 'starttime',
 			'endtime' => 'endtime',
 		),
-		'searchFields' => 'name,image,category,',
+		'searchFields' => 'name,image,thumbnail,dimension,price,category,',
 		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Image.php',
 		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_qxgallery_domain_model_image.gif'
 	),
