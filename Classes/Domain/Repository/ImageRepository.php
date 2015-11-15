@@ -1,7 +1,6 @@
 <?php
 namespace Qinx\Qxgallery\Domain\Repository;
 
-
 /***************************************************************
  *
  *  Copyright notice
@@ -32,5 +31,29 @@ namespace Qinx\Qxgallery\Domain\Repository;
  */
 class ImageRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
-	
+	/**
+	 * Returns all images for conditions set over $options
+	 *
+	 * @param array $options
+	 * @param array $ordering
+	 * @return \TYPO3\CMS\Extbase\Persistence\QueryResult
+	 */
+	public function findAll($options = array(), $ordering = array()) {
+		$matches	= [];
+		$query 		= $this->createQuery();
+
+		if(isset($options['category']) === true) {
+			if($options['category'] instanceof \Qinx\Qxgallery\Domain\Model\Category) {
+				$options['category'] = $options['category']->getUid();
+			}
+
+			$matches[] = $query->equals('category', $options['category']);
+		}
+
+		if(empty($matches) === false) {
+			$query->matching($query->logicalAnd($matches));
+		}
+
+		return $query->execute();
+	}
 }

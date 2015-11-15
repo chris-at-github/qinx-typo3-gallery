@@ -41,6 +41,13 @@ class Category extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $name = '';
 
 	/**
+	 * objectManager
+	 *
+	 * @var \TYPO3\CMS\Extbase\Object\ObjectManager
+	 */
+	protected $objectManager;
+
+	/**
 	 * Returns the name
 	 * 
 	 * @return string $name
@@ -59,4 +66,28 @@ class Category extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		$this->name = $name;
 	}
 
+	/**
+	 * return an instance of objectManager
+	 *
+	 * @param none
+	 * @return \TYPO3\CMS\Extbase\Object\ObjectManager
+	 */
+	public function getObjectManager() {
+		if(($this->objectManager instanceof \TYPO3\CMS\Extbase\Object\ObjectManager) === false) {
+			$this->objectManager = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Object\\ObjectManager');
+		}
+
+		return $this->objectManager;
+	}
+
+	/**
+	 * Returns the images of this category
+	 *
+	 * @return ObjectStorage
+	 */
+	public function getImages() {
+		return $this->getObjectManager()->get('\Qinx\Qxgallery\Domain\Repository\ImageRepository')->findAll(array(
+			'category' => $this
+		));
+	}
 }
