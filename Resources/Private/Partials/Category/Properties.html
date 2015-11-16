@@ -1,1 +1,5 @@
-<f:debug>{category.images}</f:debug>
+<f:if condition="{category.images}">
+	<div class="qx-gallery--category-images">
+		<f:render partial="Image/Listing" arguments="{images: category.images}" />
+	</div>
+</f:if>

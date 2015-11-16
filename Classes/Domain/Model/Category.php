@@ -41,6 +41,13 @@ class Category extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $name = '';
 
 	/**
+	 * images
+	 *
+	 * @var null | \TYPO3\CMS\Extbase\Persistence\Generic\QueryResult
+	 */
+	protected $images = null;
+
+	/**
 	 * objectManager
 	 *
 	 * @var \TYPO3\CMS\Extbase\Object\ObjectManager
@@ -83,11 +90,15 @@ class Category extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Returns the images of this category
 	 *
-	 * @return ObjectStorage
+	 * @return \TYPO3\CMS\Extbase\Persistence\Generic\QueryResult
 	 */
 	public function getImages() {
-		return $this->getObjectManager()->get('\Qinx\Qxgallery\Domain\Repository\ImageRepository')->findAll(array(
-			'category' => $this
-		));
+		if($this->images === null) {
+			$this->images = $this->getObjectManager()->get('\Qinx\Qxgallery\Domain\Repository\ImageRepository')->findAll(array(
+				'category' => $this
+			));
+		}
+
+		return $this->images;
 	}
 }

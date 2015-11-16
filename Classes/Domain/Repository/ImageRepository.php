@@ -36,7 +36,7 @@ class ImageRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 	 *
 	 * @param array $options
 	 * @param array $ordering
-	 * @return \TYPO3\CMS\Extbase\Persistence\QueryResult
+	 * @return \TYPO3\CMS\Extbase\Persistence\Generic\QueryResult
 	 */
 	public function findAll($options = array(), $ordering = array()) {
 		$matches	= [];
