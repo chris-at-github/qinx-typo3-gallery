@@ -31,6 +31,10 @@ namespace Qinx\Qxgallery\Domain\Repository;
  */
 class ImageRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
+	protected $defaultOrderings = array(
+		'sorting' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING
+	);
+
 	/**
 	 * Returns all images for conditions set over $options
 	 *

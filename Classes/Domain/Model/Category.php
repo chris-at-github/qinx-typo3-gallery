@@ -43,7 +43,7 @@ class Category extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * images
 	 *
-	 * @var null | \TYPO3\CMS\Extbase\Persistence\Generic\QueryResult
+	 * @var \TYPO3\CMS\Extbase\Persistence\Generic\QueryResult
 	 */
 	protected $images = null;
 
