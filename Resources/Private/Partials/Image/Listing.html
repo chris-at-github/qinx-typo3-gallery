@@ -1,7 +1,7 @@
 <f:for each="{images}" as="image">
 
 	<div class="qx-gallery--image">
-		<a href="{f:uri.image(src: image.image.originalResource.publicUrl, maxWidth: 1200, maxHeight: 1000)}">
+		<a href="{f:uri.image(src: image.image.originalResource.publicUrl, maxWidth: 1200, maxHeight: 1000)}" class="qx-gallery--lightbox-link">
 			<f:image src="{image.thumbnail.originalResource.publicUrl}" alt="{image.name}" height="600"/>
 		</a>
 	</div>
