@@ -1,7 +1,9 @@
 <f:for each="{images}" as="image">
 
 	<div class="qx-gallery--image">
-		<f:image src="{image.image.originalResource.publicUrl}" alt="{image.name}" height="600" />
+		<a href="{f:uri.image(src: image.image.originalResource.publicUrl, maxWidth: 1200, maxHeight: 1000)}">
+			<f:image src="{image.thumbnail.originalResource.publicUrl}" alt="{image.name}" height="600"/>
+		</a>
 	</div>
 
 </f:for>

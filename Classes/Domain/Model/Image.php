@@ -46,14 +46,14 @@ class Image extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
 	 * @validate NotEmpty
 	 */
-	protected $image = NULL;
+	protected $image = null;
 
 	/**
 	 * thumbnail
 	 * 
 	 * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
 	 */
-	protected $thumbnail = NULL;
+	protected $thumbnail = null;
 
 	/**
 	 * dimension
@@ -74,7 +74,7 @@ class Image extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * 
 	 * @var \Qinx\Qxgallery\Domain\Model\Category
 	 */
-	protected $category = NULL;
+	protected $category = null;
 
 	/**
 	 * Returns the name
@@ -120,7 +120,13 @@ class Image extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $thumbnail
 	 */
 	public function getThumbnail() {
-		return $this->thumbnail;
+		$thumbnail = $this->thumbnail;
+
+		if($thumbnail === null) {
+			$thumbnail = $this->getImage();
+		}
+
+		return $thumbnail;
 	}
 
 	/**
