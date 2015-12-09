@@ -94,7 +94,7 @@ class Category extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	public function getImages() {
 		if($this->images === null) {
-			$this->images = $this->getObjectManager()->get('\Qinx\Qxgallery\Domain\Repository\ImageRepository')->findAll(array(
+			$this->images = $this->getObjectManager()->get('Qinx\Qxgallery\Domain\Repository\ImageRepository')->findAll(array(
 				'category' => $this
 			));
 		}

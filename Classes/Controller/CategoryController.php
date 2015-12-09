@@ -39,7 +39,7 @@ class CategoryController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
 	 */
 	public function indexAction() {
 		if(isset($this->settings['category']) === true) {
-			$this->view->assign('category', $this->objectManager->get('\Qinx\Qxgallery\Domain\Repository\CategoryRepository')->findByUid((int) $this->settings['category']));
+			$this->view->assign('category', $this->objectManager->get('Qinx\Qxgallery\Domain\Repository\CategoryRepository')->findByUid((int) $this->settings['category']));
 		}
 	}
 }
