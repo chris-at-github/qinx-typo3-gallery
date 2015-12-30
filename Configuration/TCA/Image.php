@@ -111,7 +111,14 @@ $GLOBALS['TCA']['tx_qxgallery_domain_model_image'] = array(
 			'label' => 'LLL:EXT:qxgallery/Resources/Private/Language/locallang_db.xlf:tx_qxgallery_domain_model_image.image',
 			'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
 				'image',
-				array('maxitems' => 1),
+				array(
+					'maxitems' => 1,
+					'foreign_types' => array(
+						\TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => array(
+							'showitem' => '--palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,--palette--;;filePalette'
+						),
+					)
+				),
 				$GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
 			),
 		),
@@ -120,7 +127,14 @@ $GLOBALS['TCA']['tx_qxgallery_domain_model_image'] = array(
 			'label' => 'LLL:EXT:qxgallery/Resources/Private/Language/locallang_db.xlf:tx_qxgallery_domain_model_image.thumbnail',
 			'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
 				'thumbnail',
-				array('maxitems' => 1),
+				array(
+					'maxitems' => 1,
+					'foreign_types' => array(
+						\TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => array(
+							'showitem' => '--palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,--palette--;;filePalette'
+						),
+					)
+				),
 				$GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
 			),
 		),

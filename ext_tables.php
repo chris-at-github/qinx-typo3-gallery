@@ -39,7 +39,7 @@ $GLOBALS['TCA']['tx_qxgallery_domain_model_category'] = array(
 		),
 		'searchFields' => 'name,',
 		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Category.php',
-		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_qxgallery_domain_model_category.gif'
+		'iconfile' => 'EXT:qxgallery/Resources/Public/Icons/tx_qxgallery_domain_model_category.gif'
 	),
 );
 
@@ -68,6 +68,6 @@ $GLOBALS['TCA']['tx_qxgallery_domain_model_image'] = array(
 		),
 		'searchFields' => 'name,image,thumbnail,dimension,price,category,',
 		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Image.php',
-		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_qxgallery_domain_model_image.gif'
+		'iconfile' => 'EXT:qxgallery/Resources/Public/Icons/tx_qxgallery_domain_model_image.gif'
 	),
 );
