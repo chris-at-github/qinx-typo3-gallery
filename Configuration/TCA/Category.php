@@ -15,33 +15,37 @@ $GLOBALS['TCA']['tx_qxgallery_domain_model_category'] = array(
 		'1' => array('showitem' => ''),
 	),
 	'columns' => array(
-	
+
 		'sys_language_uid' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.language',
-			'config' => array(
-				'type' => 'select',
-				'foreign_table' => 'sys_language',
+			'label'   => 'LLL:EXT:lang/locallang_general.xlf:LGL.language',
+			'config'  => array(
+				'type'                => 'select',
+				'renderType'          => 'selectSingle',
+				'foreign_table'       => 'sys_language',
 				'foreign_table_where' => 'ORDER BY sys_language.title',
-				'items' => array(
+				'items'               => array(
 					array('LLL:EXT:lang/locallang_general.xlf:LGL.allLanguages', -1),
 					array('LLL:EXT:lang/locallang_general.xlf:LGL.default_value', 0)
 				),
 			),
 		),
+
 		'l10n_parent' => array(
 			'displayCond' => 'FIELD:sys_language_uid:>:0',
-			'exclude' => 1,
-			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.l18n_parent',
-			'config' => array(
-				'type' => 'select',
-				'items' => array(
+			'exclude'     => 1,
+			'label'       => 'LLL:EXT:lang/locallang_general.xlf:LGL.l18n_parent',
+			'config'      => array(
+				'type'                => 'select',
+				'renderType'          => 'selectSingle',
+				'items'               => array(
 					array('', 0),
 				),
-				'foreign_table' => 'tx_qxgallery_domain_model_category',
+				'foreign_table'       => 'tx_qxgallery_domain_model_category',
 				'foreign_table_where' => 'AND tx_qxgallery_domain_model_category.pid=###CURRENT_PID### AND tx_qxgallery_domain_model_category.sys_language_uid IN (-1,0)',
 			),
 		),
+
 		'l10n_diffsource' => array(
 			'config' => array(
 				'type' => 'passthrough',
