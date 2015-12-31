@@ -15,6 +15,5 @@ if (!defined('TYPO3_MODE')) {
 	array(
 		'Category' => '',
 		'Image' => '',
-		
 	)
 );
