@@ -1,9 +1,11 @@
 <f:for each="{images}" as="image">
 
-	<div class="qx-gallery--image">
-		<a href="{f:uri.image(src: image.image.uid, maxWidth: 1200, maxHeight: 1000, treatIdAsReference: 1)}" class="qx-gallery--lightbox-link" rel="qx-gallery" title="{image.name}" data-dimension="{image.dimension}" {f:if(condition: image.price, then: 'data-price="{image.price -> f:format.currency(thousandsSeparator: \',\', currencySign: \'€\')}"')}>
-			<f:image src="{image.thumbnail.uid}" alt="{image.name}" height="600" treatIdAsReference="true" />
-		</a>
-	</div>
+	<f:if condition="{image.image}">
+		<div class="qx-gallery--image">
+			<a href="{f:uri.image(src: image.image.uid, maxWidth: 1200, maxHeight: 1000, treatIdAsReference: 1)}" class="qx-gallery--lightbox-link" rel="qx-gallery" title="{image.name}" data-dimension="{image.dimension}" {f:if(condition: image.price, then: 'data-price="{image.price -> f:format.currency(thousandsSeparator: \',\', currencySign: \'€\')}"')}>
+				<f:image src="{image.thumbnail.uid}" alt="{image.name}" width="175c" height="600" treatIdAsReference="true" />
+			</a>
+		</div>
+	</f:if>
 
 </f:for>
